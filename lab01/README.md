@@ -6,5 +6,5 @@
 
 ## Notebook 2 sobre Empréstimos e TAD (opcional)
 
-> Coloque um link para o arquivo do notebook com a resolução da segunda tarefa. Ele estará dentro da pasta `notebook`.
+[Notebook 2](notebook/emprestimo2-tad.ipynb)
 
