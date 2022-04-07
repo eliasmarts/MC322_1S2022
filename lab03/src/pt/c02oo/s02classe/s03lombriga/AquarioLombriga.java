@@ -6,20 +6,29 @@ public class AquarioLombriga {
 	
 	
 	AquarioLombriga(int tamanhoAquario, int tamanhoLombriga, int posCabecaLombriga) {
+		// se o tamanho do aquário é inválido
 		if (tamanhoAquario > 0)
 			this.tamanhoAquario = tamanhoAquario;
 		else
 			this.tamanhoAquario = 1;
 	
-		if (tamanhoLombriga > tamanhoAquario)
-			this.tamanhoLombriga = tamanhoAquario;
-		else
-			this.tamanhoLombriga = tamanhoLombriga;
-		
+
+		// se a posição da cabeça é inválida
 		if (posCabecaLombriga < 1 || posCabecaLombriga > tamanhoAquario)
 			this.posInicioLombriga = 1;
 		else
 			this.posInicioLombriga = posCabecaLombriga;
+		
+		
+		if (tamanhoLombriga > tamanhoAquario)
+			this.tamanhoLombriga = tamanhoAquario;
+		// se a lombriga passa da borda direita do aquário, considera que ela vai
+		// até a borda
+		else if (posCabecaLombriga + tamanhoLombriga > tamanhoAquario)
+			this.tamanhoLombriga = tamanhoAquario - posCabecaLombriga;
+		else
+			this.tamanhoLombriga = tamanhoLombriga;
+		
 
 		this.cabecaLadoEsquerdo = true;
 	}

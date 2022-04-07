@@ -20,20 +20,20 @@ public class Animacao {
 	
 
 	String apresenta() {
-		return this.aqLombriga.apresenta();
+		return aqLombriga.apresenta();
 	}
 	
 	
 	void passo() {
-		switch (this.acoes.charAt(passoAnimacao)) {
+		switch (acoes.charAt(passoAnimacao)) {
 			case 'C':
-				this.aqLombriga.crescer();
+				aqLombriga.crescer();
 				break;
 			case 'M':
-				this.aqLombriga.mover();
+				aqLombriga.mover();
 				break;
 			case 'V':
-				this.aqLombriga.virar();
+				aqLombriga.virar();
 				break;
 		}
 	
