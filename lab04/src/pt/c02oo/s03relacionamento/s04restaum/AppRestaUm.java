@@ -17,15 +17,13 @@ public class AppRestaUm {
 		String commands[] = tk.retrieveCommands();
 		      
 		String comandosSep[];
-		      
 		String origem, destino;
-		      
-		Tabuleiro tab = new Tabuleiro();
-		
 		boolean continua = true;
 		      
-		char board[][] = tab.mostrarTabuleiro();
+		Tabuleiro tab = new Tabuleiro();
 
+		      
+		char board[][] = tab.mostrarTabuleiro();
 		tk.writeBoard("Tabuleiro inicial", board);
 
 		
@@ -39,7 +37,6 @@ public class AppRestaUm {
 				continua = tab.mover(origem, destino);
 				  
 				board = tab.mostrarTabuleiro();
-				  
 				tk.writeBoard("source: " + origem + "; target: " + destino, board);
 			}
 		}

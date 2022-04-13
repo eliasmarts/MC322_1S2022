@@ -4,8 +4,8 @@ public class Peca {
 	/*
 	 * Representa uma peça de um jogo de resta um.
 	 */
-	boolean existe;
-	Tabuleiro tab;
+	private boolean existe;
+	private Tabuleiro tab;
 	
 	
 	Peca(Tabuleiro tab, boolean existe) {
@@ -14,13 +14,13 @@ public class Peca {
 	}
 	
 	
-	void remover() {
-		existe = false;
+	public void setExiste(boolean existe) {
+		this.existe = existe;
 	}
 	
 	
-	void colocar() {
-		existe = true;
+	public boolean getExiste() {
+		return existe;
 	}
 	
 	/*
@@ -28,7 +28,7 @@ public class Peca {
 	 * a String com as coordenadas da peça capturada,
 	 * se não for, retorna a String "erro"
 	 */
-	String mover(int xi, int yi, int xf, int yf) {
+	public String mover(int xi, int yi, int xf, int yf) {
 		// posicoes fora do tabuleiro
 		if (!tab.dentroTabuleiro(xi, yi) || !tab.dentroTabuleiro(xf, yf))
 			return "erro";
@@ -46,10 +46,10 @@ public class Peca {
 		
 		// se passou em tudo isso sabemos que o movimento é válido
 		String pecaCapturada = new String();
-		pecaCapturada = tab.converterCoordenadasString(xc, yc);
+		pecaCapturada = Tabuleiro.converterCoordenadasString(xc, yc);
 		
 		// atualiza o estado da peça
-		remover();
+		setExiste(false);
 		
 		return pecaCapturada;	
 	}
