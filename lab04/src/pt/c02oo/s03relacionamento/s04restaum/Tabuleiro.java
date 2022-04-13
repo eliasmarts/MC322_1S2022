@@ -81,8 +81,8 @@ public class Tabuleiro {
 			return false;
 		if (posicoesTabuleiro[x][y] == ' ')
 			return false;
-		else
-			return true;
+		
+		return true;
 	}
 	
 	
@@ -101,8 +101,7 @@ public class Tabuleiro {
 	public boolean existePeca(int x, int y) {
 		if (dentroTabuleiro(x, y))
 			return pecas[x][y].getExiste();
-		else
-			return false;
+		return false;
 	}
 	
 	
@@ -148,7 +147,8 @@ public class Tabuleiro {
 			colocarPeca(xf, yf);
 			
 			return true;
-		} else
-			return false;
+		} 
+		
+		return false;
 	}
 }
